@@ -5,4 +5,4 @@ The challenges that I do with FreeCodeCamp in the Javascript curriculum
 
 108-133 : ES6
 
-134- : Regular Expressions
+134-165 : Regular Expressions
