@@ -8,3 +8,5 @@ The challenges that I do with FreeCodeCamp in the Javascript curriculum
 134-165: Regular Expressions
 
 166-177: Debugging
+
+178- : Basic Data Structures
