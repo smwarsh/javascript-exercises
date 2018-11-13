@@ -10,3 +10,5 @@ The challenges that I do with FreeCodeCamp in the Javascript curriculum
 166-177: Debugging
 
 178-197 : Basic Data Structures
+
+198- : Basic Algorithm Scripting
