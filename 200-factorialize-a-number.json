@@ -1,0 +1,1 @@
+{"index.js":"function factorialize(num) {\n  let sum = 1;\n  while(num > 0) {\n    sum *= num;\n    num--;\n  }\n  return sum;\n}\n\nfactorialize(5);"}
