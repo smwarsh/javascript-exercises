@@ -1,0 +1,1 @@
+{"index.js":"function confirmEnding(str, target) {\n  // \"Never give up and good luck will find you.\"\n  // -- Falcor\n  let characters = target.length * -1;\n  if(target === str.slice(characters)) {\n    return true;\n  } else {\n    return false;\n  }\n}\n\nconfirmEnding(\"Bastian\", \"n\");"}

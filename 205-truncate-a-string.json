@@ -1,0 +1,1 @@
+{"index.js":"function truncateString(str, num) {\n  // Clear out that junk in your trunk\n  let truncatedStr = str;\n  if(str.length > num) {\n    truncatedStr = str.slice(0,num) + \"...\";\n  }\n  return truncatedStr;\n}"}

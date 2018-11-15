@@ -1,0 +1,1 @@
+{"index.js":"function findElement(arr, func) {\n  let num = arr.find(func);\n  if(!num) {\n    return undefined;\n  }\n  return num;\n}\n"}
