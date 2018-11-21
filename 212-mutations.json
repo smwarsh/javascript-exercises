@@ -1,0 +1,1 @@
+{"index.js":"function mutation(arr) {\n  let upperCaseArr = arr.map(word => word.toUpperCase());\n  let firstString = upperCaseArr[0].split(\"\");\n  let secondString = upperCaseArr[1].split(\"\");\n\n  let booleanArr = secondString.map(\n    letter => firstString.includes(letter)\n  );\n\n  return booleanArr.includes(false) ? false : true;\n}\n\nmutation([\"hello\", \"hey\"]);"}
