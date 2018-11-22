@@ -11,4 +11,4 @@ The challenges that I do with FreeCodeCamp in the Javascript curriculum
 
 178-197 : Basic Data Structures
 
-198- : Basic Algorithm Scripting
+198-213 : Basic Algorithm Scripting
