@@ -1,4 +1,4 @@
-log(name); // output: Line 1: Tiny Rick! - HOISTING OK OK
+log(name); // output: Line 1: undefined - the variable declaration is hoisted but not the initialization
 
 var tinyize = function(name) {
   log(name); // output: Line 4: Rick
@@ -11,7 +11,7 @@ var tinyize = function(name) {
 };
 
 var name = tinyize("Rick");
-log(name); // output: Tiny Rick!
+log(name); // output: Line 14: Tiny Rick!
 // log(myName); // output: Uncaught ReferenceError: myName is not defined
 
 log(i); // output: Line 17: undefined
