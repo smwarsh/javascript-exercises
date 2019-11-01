@@ -1,31 +1,31 @@
-log(name); // output: Line 1: undefined - the variable declaration is hoisted but not the initialization
+log(name); // output: Reference Error
 
-var tinyize = function(name) {
+const tinyize = function(name) {
   log(name); // output: Line 4: Rick
 
-  log(myName); // output: Line 6: undefined
-  var myName = "Tiny " + name + "!";
+  log(myName); // output: Line 6: Reference Error
+  const myName = "Tiny " + name + "!";
   log(myName); // output: Line 8: Tiny Rick!
 
   return myName;
 };
 
-var name = tinyize("Rick");
+const name = tinyize("Rick");
 log(name); // output: Line 14: Tiny Rick!
-// log(myName); // output: Uncaught ReferenceError: myName is not defined
+log(myName); // output: Reference Error
 
-log(i); // output: Line 17: undefined
-for (var i = 0; i < 5; i++) {
+log(i); // output: Reference Error
+for (let i = 0; i < 5; i++) {
   setTimeout(function() {
-    log(i); // output (5 times): Line 20: 5 - CLOSURE! the for loop runs 5 times and THEN looks for the value of i to print, because of the event loop. the log function is at the global level, so each time you call setTimeout it takes the global value of i, which is 5.https://wsvincent.com/javascript-closure-settimeout-for-loop/
+    log(i); // output: Line 20: 0 / Line 20: 1 / Line 20: 2 / Line 20: 3 / Line 20: 4
   }, 100);
 }
-log(i); // output: Line 23: 5
+log(i); // output: Reference Error
 
 // helper function to log current line number and the passed in string
 // e.g. "Line 24: Hello World"
 function log(string) {
-  var callerLine = new Error().stack.split("\n")[2];
-  var lineNumber = callerLine.match(/:(\d+):\d+/)[1]; // Had to change this RegEx so it would work as the instructor intended
+  const callerLine = new Error().stack.split("\n")[2];
+  const lineNumber = callerLine.match(/:(\d+):\d+/)[1]; // Had to change this RegEx so it would work as the instructor intended
   console.log("Line " + lineNumber + ": " + string);
 }
