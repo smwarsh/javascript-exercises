@@ -1,9 +1,9 @@
-log(name); // output: Line 1: null
+log(name); // output: Uncaught TypeError: Cannot read property '1' of null
 
 var tinyize = function(name) {
   log(name); // output: Line 4: Rick
 
-  log(myName); // output: Line 6: null
+  log(myName); // output: Line 6: undefined
   var myName = "Tiny " + name + "!";
   log(myName); // output: Line 8: Tiny Rick!
 
@@ -11,21 +11,23 @@ var tinyize = function(name) {
 };
 
 var name = tinyize("Rick");
-log(name); // output: Line 14: Tiny Rick!
-log(myName); // output: Line 15: null
+log(name); // output: Uncaught TypeError: Cannot read property '1' of null
+log(myName); // output: Uncaught ReferenceError: myName is not defined
 
-log(i); // output: Line 17: null
+log(i); // output: Uncaught TypeError: Cannot read property '1' of null
 for (var i = 0; i < 5; i++) {
   setTimeout(function() {
-    log(i); // output: Line 20: 0 / Line 20: 1 / Line 20: 2 / Line 20: 3 / Line 20: 4
+    log(i); // output (5 times): Uncaught TypeError: Cannot read property '1' of null
   }, 100);
 }
-log(i); // output: Line 23: null
+log(i); // output: Uncaught TypeError: Cannot read property '1' of null
 
 // helper function to log current line number and the passed in string
 // e.g. "Line 24: Hello World"
 function log(string) {
   var callerLine = new Error().stack.split("\n")[2];
-  var lineNumber = callerLine.match(/:(\d+):\d+\)/)[1];
+  // console.log('callerLine: ' + callerLine);
+  // console.log('callerLine.match(/:(\\d+):\\d+\\)/) returns ' + callerLine.match(/:(\d+):\d+/));
+  var lineNumber = callerLine.match(/:(\d+):\d+/)[1];
   console.log("Line " + lineNumber + ": " + string);
 }
