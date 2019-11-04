@@ -1,8 +1,7 @@
 const houses = ['Stark', 'Lannister', 'Targaryen', 'Baratheon'];
 
-const getRandomHouse = function (houses) {
-  return houses[Math.floor(Math.random() * houses.length)];
-}
+const getRandomHouse = (houses) =>
+  houses[Math.floor(Math.random() * houses.length)];
 
 const getMove = function () {
   // clone the array, pull an attacker and a defender from it
@@ -13,7 +12,7 @@ const getMove = function () {
 
   // return an object representing the the attacker and defender state
   return {
-    text: `  House ${defender} infringed on the ${attacker}s' honor.
+    text: `    House ${defender} infringed on the ${attacker}s' honor.
     As a result, house ${attacker} has decided to attack!`,
     attacker: attacker,
     defender: defender
@@ -21,17 +20,17 @@ const getMove = function () {
 };
 
 const getLoser = function (move) {
-  if (move.text.indexOf('House Targaryen') === 0) {
+  if (move.text.startsWith('    House Targaryen')) {
     // Fire and Blood.
     return move.defender;
   }
 
-  if (move.text.indexOf(`infringed on the Lannisters' honor.`) >= 0) {
-    // H̶e̶a̶r̶̶M̶e̶̶R̶o̶a̶r̶!̶ A Lannister always pays his debts.
+  if (!move.text.includes(`infringed on the Lannisters' honor.`)) {
+    // H̶e̶a̶r̶̶M̶e̶̶R̶o̶a̶r̶!̶ A Lannister always pays their debts.
     return move.defender;
   }
 
-  if (move.text.indexOf(`infringed on the Starks' honor.`) >= 0) {
+  if (!move.text.includes(`infringed on the Starks' honor.`)) {
     // Attacking is risky. Winter is coming.
     return move.attacker;
   }
