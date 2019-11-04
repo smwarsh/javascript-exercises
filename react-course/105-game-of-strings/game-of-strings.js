@@ -12,25 +12,24 @@ const getMove = () => {
 
   // return an object representing the the attacker and defender state
   return {
-    text: `    House ${defender} infringed on the ${attacker}s' honor.
-    As a result, house ${attacker} has decided to attack!`,
+    text: `House ${attacker} has decided to attack!`,
     attacker: attacker,
     defender: defender
   };
 };
 
 const getLoser = move => {
-  if (move.text.startsWith('    House Targaryen')) {
+  if (move.defender === 'Targaryen') {
     // Fire and Blood.
     return move.defender;
   }
 
-  if (!move.text.includes(`infringed on the Lannisters' honor.`)) {
+  if (move.attacker === 'Lannister') {
     // H̶e̶a̶r̶̶M̶e̶̶R̶o̶a̶r̶!̶ A Lannister always pays their debts.
     return move.defender;
   }
 
-  if (!move.text.includes(`infringed on the Starks' honor.`)) {
+  if (move.attacker === 'Stark') {
     // Attacking is risky. Winter is coming.
     return move.attacker;
   }
@@ -45,7 +44,11 @@ const playGame = () => {
   const loser = getLoser(move);
   houses.splice(houses.indexOf(loser), 1);
 
-  console.log(`\n  Loser: ${loser}\n  Houses Left: ${houses.join(', ')}\n  ---\n`);
+  console.log(`
+  Loser: ${loser}
+  Houses Left: ${houses.join(', ')}
+  ---
+  `);
 }
 
 while (houses.length > 1) {
