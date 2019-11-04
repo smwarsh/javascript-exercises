@@ -4,7 +4,7 @@ In this activity we will fix a bug in a small JavaScript project using ES5 by us
 
 ## Instructions
 
-* Let's look at another example of ES5. Open up [tacos.html](../../../../01-Class-Content/19-react/01-Activities/104-Stu_ES5Debug/Unsolved/tacos.html) and click on each of the buttons displayed.
+* Let's look at another example of ES5. Open up [tacos.html](tacos.html) and click on each of the buttons displayed.
 
 * This code doesn't behave as expected (the buttons shouldn't all behave the same way).
 

@@ -4,7 +4,7 @@ In this activity we will convert a JavaScript file to utilize the ES6 we've lear
 
 ## Instructions
 
-* Convert the [game of strings](Unsolved/game-of-strings.js) into ES6 using what we've learned so far.
+* Convert the [game of strings](game-of-strings.js) into ES6 using what we've learned so far.
 
 ### Hint
 
