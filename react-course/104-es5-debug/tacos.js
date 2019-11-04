@@ -8,15 +8,15 @@ for (let i = 0; i < classmates.length; i++) {
 
   // doesn't work with var because button is used with the global value of the last item passed through in the for loop
   const button = document.createElement("button");
-  button.innerHTML = "How many tacos did " + classmate + " eat?";
+  button.innerHTML = `How many tacos did ${classmate} eat?`;
 
   button.addEventListener("click", function() {
     const tacoCount = i * 2;
 
-    alert(classmate + " ate " + tacoCount + " tacos.");
+    alert(`${classmate} ate ${tacoCount} tacos.`);
 
     if (tacoCount > 3) {
-      alert("That's a lot of tacos, " + classmate + ".\nTaco 'Bout Hungry!");
+      alert(`That's a lot of tacos, ${classmate}.\nTaco 'Bout Hungry!`);
     }
   });
 
