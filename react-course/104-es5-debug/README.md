@@ -10,8 +10,8 @@ In this activity we will fix a bug in a small JavaScript project using ES5 by us
 
 * Discuss with your partner: How/why doesn't this behave as expected?
 
-  * Attempt to find the cause of the bug and then use your new found knowledge of ES6 to correct it.
+  * Attempt to find the cause of the bug and then use your newfound knowledge of ES6 to correct it.
 
 ### Bonus
 
-* Update all instances of string concatenation (e.g. `var name = name + " Zuckerberg") to use string template literals instead. This is a new feature we'll go over next, but check out [MDN's documentation on string template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) to see if you can figure it out early.
+* Update all instances of string concatenation (e.g. `var name = name + " Zuckerberg"`) to use string template literals instead. This is a new feature we'll go over next, but check out [MDN's documentation on string template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) to see if you can figure it out early.
