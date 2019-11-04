@@ -1,9 +1,9 @@
 const houses = ['Stark', 'Lannister', 'Targaryen', 'Baratheon'];
 
-const getRandomHouse = (houses) =>
+const getRandomHouse = houses =>
   houses[Math.floor(Math.random() * houses.length)];
 
-const getMove = function () {
+const getMove = () => {
   // clone the array, pull an attacker and a defender from it
   const housesLeft = houses.slice(0);
   const defender = getRandomHouse(housesLeft);
@@ -19,7 +19,7 @@ const getMove = function () {
   };
 };
 
-const getLoser = function (move) {
+const getLoser = move => {
   if (move.text.startsWith('    House Targaryen')) {
     // Fire and Blood.
     return move.defender;
@@ -38,7 +38,7 @@ const getLoser = function (move) {
   return move.defender;
 }
 
-const playGame = function () {
+const playGame = () => {
   const move = getMove();
   console.log(`Move:\n${move.text}`);
 
