@@ -19,16 +19,13 @@ console.log("m-names: ", mNames);
 
 
 // get a single value from the data: the average age of all of the princesses
-let sum = princesses.reduce((accumulator, currentValue) => accumulator + currentValue.age, 0);
+const sum = princesses.reduce((accumulator, currentValue) => accumulator + currentValue.age, 0);
 const average = sum / princesses.length;
 console.log("average age: ", average);
 
 
 // BONUS: get the average age of all princesses whose name includes an 'l'
-let lNames = [];
-for (let i = 0; i < princesses.length; i++) {
-  if (princesses[i].name.includes('l')) {
-    lNames.push(princesses[i].name);
-  }
-}
-console.log("l-names: ", lNames);
+const lNames = princesses.filter(princess => princess.name.includes('l'));
+const lAverage = lNames.reduce((accumulator, currentValue) => accumulator + currentValue.age, 0) / lNames.length;
+
+console.log("l-names average age: ", lAverage);
