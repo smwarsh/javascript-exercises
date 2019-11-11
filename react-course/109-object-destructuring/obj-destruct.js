@@ -37,7 +37,12 @@ const greet = avatar => {
 // Can also destructure function parameters
 const greet2 = ({race, name, level, gender, className}) => {
   console.log(`I am ${name}, level ${level} ${gender} ${race} ${className}.`);
-}
+};
+
+// Use default parameters
+const greet3 = ({race = "N/A", name = "N/A", level = 0, gender = "N/A", className = "N/A"} = {}) => {
+  console.log(`I am ${name}, level ${level} ${gender} ${race} ${className}.`);
+};
 
 // Adds borrub to the list of avatars
 avatars = addAvatar(borrub);
