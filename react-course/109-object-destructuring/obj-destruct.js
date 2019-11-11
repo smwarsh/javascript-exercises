@@ -26,17 +26,12 @@ let avatars = [
 ];
 
 // 1. Update this function so it uses object rest to append the new avatar to the array
-const addAvatar = function(avatar) {
-  return avatars.concat(avatar)
-};
+// It doesn't need it? Changing to arrow function instead for practice
+const addAvatar = avatar => avatars.concat(avatar);
 
-const greet = function(avatar) {
-  // 2. Update this function to use object destructuring to access the avatar object properties
-  const race = avatar.race;
-  const name = avatar.name;
-  const level = avatar.level;
-  const gender = avatar.gender;
-  const className = avatar.className;
+const greet = avatar => {
+  // Use object destructuring to access the avatar object properties
+  const {race, name, level, gender, className} = avatar;
   console.log(`I am ${name}, level ${level} ${gender} ${race} ${className}.`);
 };
 
