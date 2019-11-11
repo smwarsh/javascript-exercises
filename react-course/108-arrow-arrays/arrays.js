@@ -11,7 +11,7 @@ princesses.forEach(princess => console.log(`${princess.name}: ${princess.age}`))
 
 // create an array of just the names from the princesses array
 // map: creates a new array with the results of calling a provided function on every element in the calling array
-const names = princesses.map(princess => princess.name ;
+const names = princesses.map(princess => princess.name);
 console.log("names: ", names);
 
 // using the `names` array, get only those names that start with an 'M'
